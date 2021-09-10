@@ -1,0 +1,35 @@
+Evaluating negative ratio 0.01
+      equi isos righ  Err Err%
+ equi 1000    0    0    0  0.0
+ isos  487  513    0  487 48.7
+ righ    0  275  725  275 27.5
+
+Error: 762/3000 = 25.40%
+Evaluating negative ratio 0.05
+      equi isos righ  Err Err%
+ equi 1000    0    0    0  0.0
+ isos  487  513    0  487 48.7
+ righ    0  275  725  275 27.5
+
+Error: 762/3000 = 25.40%
+Evaluating negative ratio 0.1
+      equi isos righ  Err Err%
+ equi 1000    0    0    0  0.0
+ isos  487  513    0  487 48.7
+ righ    0  275  725  275 27.5
+
+Error: 762/3000 = 25.40%
+Evaluating negative ratio 0.2
+      equi isos righ  Err Err%
+ equi 1000    0    0    0  0.0
+ isos  487  513    0  487 48.7
+ righ    0  283  717  283 28.3
+
+Error: 770/3000 = 25.67%
+Evaluating negative ratio 0.3
+      equi isos righ  Err Err%
+ equi 1000    0    0    0  0.0
+ isos  487  513    0  487 48.7
+ righ    0  283  717  283 28.3
+
+Error: 770/3000 = 25.67%
