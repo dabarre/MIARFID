@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Seminario 1 GPC. Loading screen WebGL app-->
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Loading screen WebGL</title>
+        <style>
+            body {
+                background-color: white;
+                margin: 0px;
+                overflow: hidden;
+            }
+            canvas {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body onload="main()">
+        <canvas id="canvas" width="400" height="300">
+            Your browser does not support the HTML5 canvas element.
+        </canvas>
+        
+        <!-- Utility libraries of WebGL Programming Guide-->
+        <script src="lib/webgl-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <script src="lib/cuon-matrix.js"></script>
+
+        <script src="js/practica1.js"></script>
+    </body>
+</html>

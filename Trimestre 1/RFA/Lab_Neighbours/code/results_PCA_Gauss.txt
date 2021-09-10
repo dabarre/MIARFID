@@ -1,0 +1,7 @@
+39/4096 ../data/expressionsTr.gz ../data/expressionsTe.gz 3 48 6.2
+2/2 ../data/gauss2DTr.gz ../data/gauss2DTe.gz 677 10000 6.8
+206/1280 ../data/genderTr.gz ../data/genderTe.gz 228 474 48.1
+2/4 ../data/irisTr.gz ../data/irisTe.gz 7 132 5.3
+57/100 ../data/newsTr.gz ../data/newsTe.gz 2728 4996 54.6
+181/400 ../data/ocr20x20Tr.gz ../data/ocr20x20Te.gz 1 300 0.3
+651/2000 ../data/videosTr.gz ../data/videosTe.gz 670 1348 49.7
