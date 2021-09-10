@@ -1,0 +1,85 @@
+#!/usr/bin/awk -f
+
+#
+# Copyright (C) 1998 Alfons Juan (ajuan@iti.upv.es).
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+
+###############################################################################
+
+function isort(A,n,   i,j,t) { # sorts A[1..n] by insertion
+  for (i=2;i<=n;i++)
+    for (j=i;j>1 && A[j-1]>A[j];j--)
+      {t=A[j-1]; A[j-1]=A[j]; A[j]=t}
+}
+
+###############################################################################
+
+function usage() {
+  printf("\n\
+usage: clusteval [-h] [-w <column width>] [<file> ...]\n\
+\n\
+where expected input lines are of the form:\n\
+\"<real label> <recognized label>\"\n");
+  exitnow=1; exit;
+}
+
+###############################################################################
+
+BEGIN {
+
+  w=4; # default column width
+  for (i=1;i<ARGC;i++) 
+    if (ARGV[i]=="-h") usage();
+    else if (ARGV[i]=="-w") {ARGV[i++]=""; w=ARGV[i]; ARGV[i]="";}
+    else if (substr(ARGV[i],1,1)!="-") break;
+    else usage();
+
+  sfo=sprintf(" %%%d.%ds",w,w); # string format
+  ifo=sprintf(" %%%dd",w);      # integer format
+  ffo=sprintf(" %%%d.1f",w);    # float format
+}
+
+###############################################################################
+
+{ 
+  if (NF==2) {
+    REAL[$1]++;       # array of real labels
+    REC[$2]++;        # array of recognized labels
+    CONFUS[$1,$2]++;  # confusion matrix
+  } 
+}
+
+###############################################################################
+
+END {
+  if (exitnow) exit;
+  for (real in REAL) SREAL[++nreal]=real; isort(SREAL,nreal);
+  for (rec in REC) SREC[++nrec]=rec; isort(SREC,nrec);
+  printf(sfo,""); for (i=1;i<=nrec;i++) printf(sfo,SREC[i]);
+  printf(sfo,"Err"); printf(sfo,"Err%"); printf("\n");
+  for (i=1;i<=nreal;i++) {
+    erri=0; toti=0; printf(sfo,SREAL[i])
+    for (j=1;j<=nrec;j++) {
+      confus=CONFUS[SREAL[i],SREC[j]]; printf(ifo,confus)
+      if (SREAL[i]!=SREC[j]) {erri+=confus; err+=confus}
+      toti+=confus; tot+=confus;
+    }
+    printf(ifo,erri); printf(ffo,100.0*erri/toti); printf("\n");
+  }
+  printf("\nError: %d / %d = %.2f %%\n",err,tot,100.0*err/tot);
+}
+
+
+
+
+

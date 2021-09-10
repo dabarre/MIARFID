@@ -1,0 +1,21 @@
+Embedding 128 Encoder-Decoder 128
+BLEU = 16.83, 46.6/21.6/11.9/6.7 (BP=1.000, ratio=1.036, hyp_len=23899, ref_len=23073)
+
+Embedding 256 Encoder-Decoder 64
+BLEU = 18.92, 51.8/24.9/14.1/8.2 (BP=0.963, ratio=0.964, hyp_len=22245, ref_len=23073)
+
+Embedding 256 Encoder-Decoder 128
+BLEU = 18.67, 49.1/23.8/13.5/7.9 (BP=0.994, ratio=0.994, hyp_len=22932, ref_len=23073)
+
+Embedding 512 Encoder-Decoder 128
+BLEU = 12.04, 37.3/15.6/8.1/4.5 (BP=1.000, ratio=1.169, hyp_len=26966, ref_len=23073)
+
+Embedding 512 Encoder-Decoder 256
+BLEU = 9.86, 35.8/13.6/6.2/3.1 (BP=1.000, ratio=1.158, hyp_len=26723, ref_len=23073)
+
+Embedding 128 Transformer 128
+BLEU = 0.00, 3.1/0.0/0.0/0.0 (BP=1.000, ratio=1.977, hyp_len=45608, ref_len=23073)
+
+Embedding 256 Transformer 256
+BLEU = 0.00, 3.1/0.0/0.0/0.0 (BP=1.000, ratio=1.977, hyp_len=45608, ref_len=23073)
+

@@ -1,0 +1,13 @@
+export PATH=$PATH:/opt/moses-4/bin/
+export PATH=$PATH:/opt/moses-4/scripts/training/
+export PATH=$PATH:/opt/srilm-1.7.3/bin/i686-m64
+export SCRIPTS_ROOTDIR=/opt/moses-4/scripts/
+export GIZA=/opt/mgiza/mgizapp/bin/
+export MOSES=/opt/moses-4/
+export CPU=1
+
+export TA="$PWD"
+export INSTALLATION_PATH=/opt/nmt-keras
+export NMT="$INSTALLATION_PATH"/NMT_TA
+export PATH="$NMT"/miniconda/bin/:$PATH
+export PYTHONPATH=$PYTHONPATH:"$NMT"/nmt-keras/keras:"$NMT"/nmt-keras/coco-caption:"$NMT"/nmt-keras/multimodal_keras_wrapper
